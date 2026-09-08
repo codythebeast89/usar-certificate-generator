@@ -380,6 +380,14 @@ async function renderCertificate() {
   const division = divisionDisplayName();
   const dcg = $("dcg").value.trim() || "(DCG username)";
   const bco = $("bco").value.trim() || "(BCO username)";
+  const leftTitle =
+    $("leftSignatoryTitle").value.trim() ||
+    course.leftSignatoryTitle ||
+    "Division Commanding General,";
+  const rightTitle =
+    $("rightSignatoryTitle").value.trim() ||
+    course.rightSignatoryTitle ||
+    "Brigade Commanding Officer,";
   const day = dayWord($("day").value);
   const month = $("month").value;
   const year = $("year").value || new Date().getFullYear();
@@ -485,9 +493,9 @@ async function renderCertificate() {
   ctx.stroke();
 
   ctx.font = '400 22px "Libre Baskerville", serif';
-  ctx.fillText(course.leftSignatoryTitle || "Division Commanding General,", leftX, sigY + 70);
+  ctx.fillText(leftTitle, leftX, sigY + 70);
   ctx.fillText(division, leftX, sigY + 100);
-  ctx.fillText(course.rightSignatoryTitle || "Brigade Commanding Officer,", rightX, sigY + 70);
+  ctx.fillText(rightTitle, rightX, sigY + 70);
   ctx.fillText(course.rightSignatoryOrg || "Army University", rightX, sigY + 100);
 
   statusEl.textContent = `${course.shortName} · ${graduate} · ${division}`;
@@ -520,6 +528,12 @@ function readFileAsUrl(file) {
   });
 }
 
+function syncSignatoryTitlesFromCourse(course) {
+  if (!course) return;
+  $("leftSignatoryTitle").value = course.leftSignatoryTitle || "Division Commanding General,";
+  $("rightSignatoryTitle").value = course.rightSignatoryTitle || "Brigade Commanding Officer,";
+}
+
 function wireEvents() {
   const form = $("cert-form");
   form.addEventListener("input", queueRender);
@@ -529,6 +543,7 @@ function wireEvents() {
     const course = catalog.courses.find((c) => c.id === $("course").value);
     if (!course || !course.enabled) return;
     $("location").value = course.defaultLocation || $("location").value;
+    syncSignatoryTitlesFromCourse(course);
     populateWatermarkSelect(course);
     queueRender();
   });
@@ -581,6 +596,7 @@ function wireEvents() {
       const course = catalog.courses.find((c) => c.enabled) || catalog.courses[0];
       $("course").value = course.id;
       $("location").value = course.defaultLocation || "Fort Jackson";
+      syncSignatoryTitlesFromCourse(course);
       populateWatermarkSelect(course);
       const eightySecond = divisionList().find((u) => u.abbr === "82nd");
       if (eightySecond) $("division").value = eightySecond.id;
@@ -636,6 +652,7 @@ async function init() {
   const course = catalog.courses.find((c) => c.enabled) || catalog.courses[0];
   $("course").value = course.id;
   $("location").value = course.defaultLocation || "Fort Jackson";
+  syncSignatoryTitlesFromCourse(course);
   populateWatermarkSelect(course);
 
   const eightySecond = divisionList().find((u) => u.abbr === "82nd");
