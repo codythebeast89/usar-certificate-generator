@@ -24,6 +24,66 @@ function $(id) {
   return document.getElementById(id);
 }
 
+/** Filename-safe slug (lowercase, alnum + hyphen). */
+function fileSlug(value, fallback = "x") {
+  const s = String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return s || fallback;
+}
+
+/** UTC stamp: DDHHMMSSZmmmYY */
+function utcStamp(date = new Date()) {
+  const dd = String(date.getUTCDate()).padStart(2, "0");
+  const hh = String(date.getUTCHours()).padStart(2, "0");
+  const mm = String(date.getUTCMinutes()).padStart(2, "0");
+  const ss = String(date.getUTCSeconds()).padStart(2, "0");
+  const mmm = String(date.getUTCMilliseconds()).padStart(3, "0");
+  const yy = String(date.getUTCFullYear()).slice(-2);
+  return `${dd}${hh}${mm}${ss}Z${mmm}${yy}`;
+}
+
+function makeCrc32Table() {
+  const table = new Uint32Array(256);
+  for (let i = 0; i < 256; i++) {
+    let c = i;
+    for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+    table[i] = c >>> 0;
+  }
+  return table;
+}
+
+const CRC32_TABLE = makeCrc32Table();
+
+/** 32-bit CRC32 as 8-char lowercase hex. */
+function crc32Hex(bytes) {
+  let crc = 0xffffffff;
+  for (let i = 0; i < bytes.length; i++) {
+    crc = CRC32_TABLE[(crc ^ bytes[i]) & 0xff] ^ (crc >>> 8);
+  }
+  return ((crc ^ 0xffffffff) >>> 0).toString(16).padStart(8, "0");
+}
+
+function canvasToPngBlob(c) {
+  return new Promise((resolve, reject) => {
+    c.toBlob((blob) => {
+      if (blob) resolve(blob);
+      else reject(new Error("PNG export failed"));
+    }, "image/png");
+  });
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.download = filename;
+  a.href = url;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 function dayWord(n) {
   return ORDINAL[Math.min(31, Math.max(1, Number(n) || 1))] || String(n);
 }
@@ -531,12 +591,14 @@ function wireEvents() {
 
   $("downloadBtn").addEventListener("click", async () => {
     await renderCertificate();
-    const graduate = $("graduate").value.trim() || "graduate";
     const course = catalog.courses.find((c) => c.id === $("course").value);
-    const a = document.createElement("a");
-    a.download = `${(course?.shortName || "cert").toLowerCase()}-${graduate}-certificate.png`;
-    a.href = canvas.toDataURL("image/png");
-    a.click();
+    const coursePart = fileSlug(course?.shortName || course?.id || "cert", "cert");
+    const userPart = fileSlug($("graduate").value, "graduate");
+    const stamp = utcStamp();
+    const blob = await canvasToPngBlob(canvas);
+    const bytes = new Uint8Array(await blob.arrayBuffer());
+    const checksum = crc32Hex(bytes);
+    downloadBlob(blob, `${coursePart}-${userPart}-${stamp}-${checksum}.png`);
   });
 
   $("fullscreenBtn").addEventListener("click", () => {
