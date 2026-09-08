@@ -530,8 +530,18 @@ function readFileAsUrl(file) {
 
 function syncSignatoryTitlesFromCourse(course) {
   if (!course) return;
-  $("leftSignatoryTitle").value = course.leftSignatoryTitle || "Division Commanding General,";
+  syncLeftSignatoryTitle(course);
   $("rightSignatoryTitle").value = course.rightSignatoryTitle || "Brigade Commanding Officer,";
+}
+
+/** Left title follows QMC selection; other units use the course default. */
+function syncLeftSignatoryTitle(course) {
+  if (!course) return;
+  const leftUnitId = $("leftUnit").value || $("division").value;
+  const isQmc = leftUnitId === "QMC" || selectedDivision()?.abbr === "QMC";
+  $("leftSignatoryTitle").value = isQmc
+    ? "Quartermaster General,"
+    : course.leftSignatoryTitle || "Division Commanding General,";
 }
 
 function wireEvents() {
@@ -552,6 +562,8 @@ function wireEvents() {
     customLeftUrl = null;
     $("leftCustomFile").value = "";
     syncLeftUnitFromDivision();
+    const course = catalog.courses.find((c) => c.id === $("course").value);
+    syncLeftSignatoryTitle(course);
     queueRender();
   });
 
@@ -564,6 +576,8 @@ function wireEvents() {
     if (div?.command && commandList().some((c) => c.id === div.command)) {
       $("commandGroup").value = div.command;
     }
+    const course = catalog.courses.find((c) => c.id === $("course").value);
+    syncLeftSignatoryTitle(course);
     queueRender();
   });
 
@@ -596,11 +610,11 @@ function wireEvents() {
       const course = catalog.courses.find((c) => c.enabled) || catalog.courses[0];
       $("course").value = course.id;
       $("location").value = course.defaultLocation || "Fort Jackson";
-      syncSignatoryTitlesFromCourse(course);
       populateWatermarkSelect(course);
       const eightySecond = divisionList().find((u) => u.abbr === "82nd");
       if (eightySecond) $("division").value = eightySecond.id;
       syncLeftUnitFromDivision();
+      syncSignatoryTitlesFromCourse(course);
       queueRender();
     }, 0);
   });
@@ -652,12 +666,12 @@ async function init() {
   const course = catalog.courses.find((c) => c.enabled) || catalog.courses[0];
   $("course").value = course.id;
   $("location").value = course.defaultLocation || "Fort Jackson";
-  syncSignatoryTitlesFromCourse(course);
   populateWatermarkSelect(course);
 
   const eightySecond = divisionList().find((u) => u.abbr === "82nd");
   if (eightySecond) $("division").value = eightySecond.id;
   syncLeftUnitFromDivision();
+  syncSignatoryTitlesFromCourse(course);
 
   wireEvents();
   queueRender();
