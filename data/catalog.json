@@ -1,0 +1,1566 @@
+{
+  "courses": [
+    {
+      "id": "ocs",
+      "name": "Officer Candidate School",
+      "shortName": "OCS",
+      "enabled": true,
+      "certificateTitle": "Officer Candidate School",
+      "certificateSubtitle": "Certificate of Graduation",
+      "bodyTemplate": "This is to certify that Candidate {graduate} of the {division} has successfully completed the prescribed course of instruction and satisfied all requirements of {course}, demonstrating the professionalism, trustworthiness, and courage expected of a commissioned officer.",
+      "watermarkLogo": "assets/logos/courses/army-university.png",
+      "defaultRightLogo": "assets/logos/groups/forscom.png",
+      "defaultRightLabel": "Forces Command",
+      "rightSignatoryTitle": "Brigade Commanding Officer,",
+      "rightSignatoryOrg": "Army University",
+      "leftSignatoryTitle": "Division Commanding General,",
+      "defaultLocation": "Fort Jackson",
+      "candidateLabel": "Candidate"
+    },
+    {
+      "id": "ncoes",
+      "name": "NCO Education System",
+      "shortName": "NCOES",
+      "enabled": false,
+      "certificateTitle": "NCO Education System",
+      "certificateSubtitle": "Certificate of Graduation",
+      "bodyTemplate": "This is to certify that Candidate {graduate} of the {division} has successfully completed the prescribed course of instruction and satisfied all requirements of {course}, demonstrating the professionalism, trustworthiness, and courage expected of a commissioned officer.",
+      "watermarkLogo": "assets/logos/groups/sma.png",
+      "defaultRightLogo": "assets/logos/groups/forscom.png",
+      "defaultRightLabel": "Forces Command",
+      "rightSignatoryTitle": "Brigade Commanding Officer,",
+      "rightSignatoryOrg": "Sergeants Major Academy",
+      "leftSignatoryTitle": "Division Commanding General,",
+      "defaultLocation": "Fort Jackson",
+      "candidateLabel": "Candidate"
+    }
+  ],
+  "units": [
+    {
+      "id": "1CAV",
+      "name": "1st Cavalry Division",
+      "abbr": "1CAV",
+      "type": "division",
+      "logo": "assets/logos/divisions/1cav.png",
+      "brigades": [
+        {
+          "id": "Greywolf Brigade",
+          "name": "Greywolf Brigade",
+          "abbr": "",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/1cav-greywolf-brigade.png",
+          "companies": [
+            {
+              "id": "Warhorse Company",
+              "name": "Warhorse Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1cav-warhorse-company.png"
+            },
+            {
+              "id": "Nighthawks Company",
+              "name": "Nighthawks Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1cav-nighthawks-company.png"
+            },
+            {
+              "id": "Wrangler Company",
+              "name": "Wrangler Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1cav-wrangler-company.png"
+            }
+          ]
+        },
+        {
+          "id": "Ironhorse Brigade",
+          "name": "Ironhorse Brigade",
+          "abbr": "",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/1cav-ironhorse-brigade.png",
+          "companies": [
+            {
+              "id": "Saber Company",
+              "name": "Saber Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1cav-saber-company.png"
+            },
+            {
+              "id": "Lancer Company",
+              "name": "Lancer Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1cav-lancer-company.png"
+            }
+          ]
+        },
+        {
+          "id": "Spearhead Brigade",
+          "name": "Spearhead Brigade",
+          "abbr": "",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/1cav-spearhead-brigade.png",
+          "companies": [
+            {
+              "id": "Garryowen Company",
+              "name": "Garryowen Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1cav-garryowen-company.png"
+            },
+            {
+              "id": "Palehorse Company",
+              "name": "Palehorse Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1cav-palehorse-company.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "101st",
+      "name": "101st Airborne Division",
+      "abbr": "101st",
+      "type": "division",
+      "logo": "assets/logos/divisions/101st.png",
+      "brigades": [
+        {
+          "id": "BH",
+          "name": "Black Hats",
+          "abbr": "BH",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/101st-black-hats.png",
+          "companies": [
+            {
+              "id": "Aurora Company",
+              "name": "Aurora Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/101st-aurora-company.png"
+            },
+            {
+              "id": "Titan Company",
+              "name": "Titan Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/101st-titan-company.png"
+            }
+          ]
+        },
+        {
+          "id": "Strike",
+          "name": "Strike Brigade",
+          "abbr": "Strike",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/101st-strike-brigade.png",
+          "companies": [
+            {
+              "id": "Raptor Company",
+              "name": "Raptor Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/101st-raptor-company.png"
+            },
+            {
+              "id": "Assurgam Company",
+              "name": "Assurgam Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/101st-assurgam-company.png"
+            },
+            {
+              "id": "Bulldog Company",
+              "name": "Bulldog Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/101st-bulldog-company.png"
+            }
+          ]
+        },
+        {
+          "id": "Wings",
+          "name": "Wings Brigade",
+          "abbr": "Wings",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/101st-wings-brigade.png",
+          "companies": [
+            {
+              "id": "Air Assault Company",
+              "name": "Air Assault Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/101st-air-assault-company.png"
+            },
+            {
+              "id": "Air Logistics Company",
+              "name": "Air Logistics Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/101st-air-logistics-company.png"
+            },
+            {
+              "id": "Aviation Qualification Company",
+              "name": "Aviation Qualification Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/101st-aviation-qualification-company.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1ID",
+      "name": "1st Infantry Division",
+      "abbr": "1ID",
+      "type": "division",
+      "logo": "assets/logos/divisions/1id.png",
+      "brigades": [
+        {
+          "id": "RAVEN",
+          "name": "RAVEN BRIGADE",
+          "abbr": "RAVEN",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/1id-raven-brigade.png",
+          "companies": [
+            {
+              "id": "Phoenix Company",
+              "name": "Phoenix Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1id-phoenix-company.png"
+            },
+            {
+              "id": "Dagger Company",
+              "name": "Dagger Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1id-dagger-company.png"
+            }
+          ]
+        },
+        {
+          "id": "DEMON",
+          "name": "DEMON BRIGADE",
+          "abbr": "DEMON",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/1id-demon-brigade.png",
+          "companies": [
+            {
+              "id": "Phantom Company",
+              "name": "Phantom Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1id-phantom-company.png"
+            },
+            {
+              "id": "Reaper Company",
+              "name": "Reaper Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1id-reaper-company.png"
+            }
+          ]
+        },
+        {
+          "id": "AIS",
+          "name": "Army Infantry School",
+          "abbr": "AIS",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/1id-army-infantry-school.png",
+          "companies": [
+            {
+              "id": "Golf Company",
+              "name": "Golf Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1id-golf-company.png"
+            },
+            {
+              "id": "Viper Company",
+              "name": "Viper Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1id-viper-company.png"
+            }
+          ]
+        },
+        {
+          "id": "VANGUARD",
+          "name": "VANGUARD BRIGADE",
+          "abbr": "VANGUARD",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/1id-vanguard-brigade.png",
+          "companies": [
+            {
+              "id": "Lifeline Company",
+              "name": "Lifeline Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1id-lifeline-company.png"
+            },
+            {
+              "id": "Legion Company",
+              "name": "Legion Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/1id-legion-company.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "82nd",
+      "name": "82nd Airborne Division",
+      "abbr": "82nd",
+      "type": "division",
+      "logo": "assets/logos/divisions/82nd.png",
+      "brigades": [
+        {
+          "id": "PTB",
+          "name": "Panther Brigade",
+          "abbr": "PTB",
+          "type": "brigade",
+          "logo": null,
+          "companies": [
+            {
+              "id": "Angel Company",
+              "name": "Angel Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/82nd-angel-company.png"
+            },
+            {
+              "id": "173rd Mountaineering Company",
+              "name": "173rd Mountaineering Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/82nd-173rd-mountaineering-company.png"
+            }
+          ]
+        },
+        {
+          "id": "FCB",
+          "name": "Falcon Brigade",
+          "abbr": "FCB",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/82nd-falcon-brigade.png",
+          "companies": [
+            {
+              "id": "Hawk Company",
+              "name": "Hawk Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/82nd-hawk-company.png"
+            },
+            {
+              "id": "Eagle Company",
+              "name": "Eagle Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/82nd-eagle-company.png"
+            }
+          ]
+        },
+        {
+          "id": "BHB",
+          "name": "Black Hats Brigade",
+          "abbr": "BHB",
+          "type": "brigade",
+          "logo": "assets/logos/brigades/82nd-black-hats-brigade.png",
+          "companies": [
+            {
+              "id": "Orpheus Company",
+              "name": "Orpheus Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/82nd-orpheus-company.png"
+            },
+            {
+              "id": "Eurydice Company",
+              "name": "Eurydice Company",
+              "abbr": null,
+              "type": "company",
+              "logo": "assets/logos/companies/82nd-eurydice-company.png"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "trackedGroups": [
+    {
+      "id": 3108077,
+      "name": "United States Army",
+      "abbr": "USAR",
+      "category": "usar",
+      "logo": "assets/logos/groups/usar.png",
+      "source": "roblox"
+    },
+    {
+      "id": 9606178,
+      "name": "Futures Command",
+      "abbr": "FC",
+      "category": "usar",
+      "logo": "assets/logos/groups/fc.png",
+      "source": "roblox"
+    },
+    {
+      "id": 33323430,
+      "name": "Veterans Association",
+      "abbr": "VA",
+      "category": "usar",
+      "logo": "assets/logos/groups/va.png",
+      "source": "roblox"
+    },
+    {
+      "id": 34055702,
+      "name": "Army Administrative Command",
+      "abbr": "AAC",
+      "category": "aac",
+      "logo": "assets/logos/groups/aac.png",
+      "source": "roblox"
+    },
+    {
+      "id": 14504795,
+      "name": "Army Foreign Affairs",
+      "abbr": "AFA",
+      "category": "aac",
+      "logo": "assets/logos/groups/afa.png",
+      "source": "roblox"
+    },
+    {
+      "id": 5040124,
+      "name": "Quartermaster Corps",
+      "abbr": "QMC",
+      "category": "aac",
+      "logo": "assets/logos/groups/qmc.png",
+      "source": "roblox"
+    },
+    {
+      "id": 34098084,
+      "name": "Office of the Deputy Chief of Staff",
+      "abbr": "ODCS",
+      "category": "aac",
+      "logo": "assets/logos/groups/odcs.png",
+      "source": "roblox"
+    },
+    {
+      "id": 5896835,
+      "name": "Army Service Component Commands",
+      "abbr": "ASCC",
+      "category": "aac",
+      "logo": "assets/logos/groups/ascc.png",
+      "source": "roblox"
+    },
+    {
+      "id": 15727328,
+      "name": "USAR Community Staff",
+      "abbr": "STAFF",
+      "category": "aac",
+      "logo": "assets/logos/groups/staff.png",
+      "source": "roblox"
+    },
+    {
+      "id": 3198375,
+      "name": "Forces Command",
+      "abbr": "FORSCOM",
+      "category": "forscom",
+      "logo": "assets/logos/groups/forscom.png",
+      "source": "roblox"
+    },
+    {
+      "id": 6245987,
+      "name": "1st Cavalry Division",
+      "abbr": "1CAV",
+      "category": "forscom",
+      "logo": "assets/logos/groups/1cav.png",
+      "source": "roblox"
+    },
+    {
+      "id": 3735974,
+      "name": "101st Airborne Division",
+      "abbr": "101st",
+      "category": "forscom",
+      "logo": "assets/logos/groups/101st.png",
+      "source": "roblox"
+    },
+    {
+      "id": 3725812,
+      "name": "1st Infantry Division",
+      "abbr": "1ID",
+      "category": "forscom",
+      "logo": "assets/logos/groups/1id.png",
+      "source": "roblox"
+    },
+    {
+      "id": 3198387,
+      "name": "82nd Airborne Division",
+      "abbr": "82nd",
+      "category": "forscom",
+      "logo": "assets/logos/groups/82nd.png",
+      "source": "roblox"
+    },
+    {
+      "id": 4929233,
+      "name": "Military Police Corps",
+      "abbr": "MPC",
+      "category": "mpc",
+      "logo": "assets/logos/groups/mpc.png",
+      "source": "roblox"
+    },
+    {
+      "id": 786467475,
+      "name": "Army Corrections Command",
+      "abbr": "ACC",
+      "category": "mpc",
+      "logo": "assets/logos/groups/acc.png",
+      "source": "roblox"
+    },
+    {
+      "id": 15531002,
+      "name": "Judge Advocate General's Corps",
+      "abbr": "JAGC",
+      "category": "mpc",
+      "logo": "assets/logos/groups/jagc.png",
+      "source": "roblox"
+    },
+    {
+      "id": 33438975,
+      "name": "Criminal Investigation Division",
+      "abbr": "CID",
+      "category": "mpc",
+      "logo": "assets/logos/groups/cid.png",
+      "source": "roblox"
+    },
+    {
+      "id": 8124498,
+      "name": "503rd Battalion",
+      "abbr": "503rd",
+      "category": "mpc",
+      "logo": "assets/logos/groups/503rd.png",
+      "source": "roblox"
+    },
+    {
+      "id": 7076400,
+      "name": "14th Brigade",
+      "abbr": "14th",
+      "category": "mpc",
+      "logo": "assets/logos/groups/14th.png",
+      "source": "roblox"
+    },
+    {
+      "id": 4929259,
+      "name": "Training and Doctrine Command",
+      "abbr": "TRADOC",
+      "category": "tradoc",
+      "logo": "assets/logos/groups/tradoc.png",
+      "source": "roblox"
+    },
+    {
+      "id": 34098045,
+      "name": "Combined Arms Centre",
+      "abbr": "CAC",
+      "category": "tradoc",
+      "logo": "assets/logos/groups/cac.png",
+      "source": "roblox"
+    },
+    {
+      "id": 4929487,
+      "name": "Army University",
+      "abbr": "AU",
+      "category": "tradoc",
+      "logo": "assets/logos/groups/au.png",
+      "source": "roblox"
+    },
+    {
+      "id": 8050360,
+      "name": "Recruiting and Retention College",
+      "abbr": "RRC",
+      "category": "tradoc",
+      "logo": "assets/logos/groups/rrc.png",
+      "source": "roblox"
+    },
+    {
+      "id": 448239957,
+      "name": "Center for Initial Military Training",
+      "abbr": "CIMT",
+      "category": "tradoc",
+      "logo": "assets/logos/groups/cimt.png",
+      "source": "roblox"
+    },
+    {
+      "id": 32440420,
+      "name": "165th Infantry Brigade",
+      "abbr": "165th",
+      "category": "tradoc",
+      "logo": "assets/logos/groups/165th.png",
+      "source": "roblox"
+    },
+    {
+      "id": 9608022,
+      "name": "Drill Sergeant Academy",
+      "abbr": "DSA",
+      "category": "tradoc",
+      "logo": "assets/logos/groups/dsa.png",
+      "source": "roblox"
+    },
+    {
+      "id": 34124457,
+      "name": "Sergeants Major Academy",
+      "abbr": "SMA",
+      "category": "tradoc",
+      "logo": "assets/logos/groups/sma.png",
+      "source": "roblox"
+    },
+    {
+      "id": 3114833,
+      "name": "Army Special Operations Command",
+      "abbr": "ASOC",
+      "category": "asoc",
+      "logo": "assets/logos/groups/asoc.png",
+      "source": "roblox"
+    },
+    {
+      "id": 3235972,
+      "name": "Army Special Forces",
+      "abbr": "ASF",
+      "category": "asoc",
+      "logo": "assets/logos/groups/asf.png",
+      "source": "roblox"
+    },
+    {
+      "id": 5021791,
+      "name": "75th Ranger Regiment",
+      "abbr": "75th",
+      "category": "asoc",
+      "logo": "assets/logos/groups/75th.png",
+      "source": "roblox"
+    },
+    {
+      "id": 4985471,
+      "name": "John F. Kennedy Special Warfare Center and School",
+      "abbr": "JFKSWCS",
+      "category": "asoc",
+      "logo": "assets/logos/groups/jfkswcs.png",
+      "source": "roblox"
+    },
+    {
+      "id": 35114712,
+      "name": "Task Force Dagger",
+      "abbr": "TFD",
+      "category": "asoc",
+      "logo": "assets/logos/groups/tfd.png",
+      "source": "roblox"
+    },
+    {
+      "id": 4978956,
+      "name": "160th Special Operations Aviation Regiment",
+      "abbr": "160th",
+      "category": "asoc",
+      "logo": "assets/logos/groups/160th.png",
+      "source": "roblox"
+    },
+    {
+      "id": 7076547,
+      "name": "Orbital Readiness Battalion",
+      "abbr": "ORB",
+      "category": "asoc",
+      "logo": "assets/logos/groups/orb.png",
+      "source": "roblox"
+    },
+    {
+      "id": 34097972,
+      "name": "42nd Orbital Operations Division",
+      "abbr": "42nd OO",
+      "category": "asoc",
+      "logo": "assets/logos/groups/42nd-oo.png",
+      "source": "roblox"
+    }
+  ],
+  "meta": {
+    "logoTargetPx": 1024,
+    "source": "forscom-website site-config + Roblox group icons"
+  },
+  "logoOptions": [
+    {
+      "id": "group:USAR",
+      "label": "USAR \u2014 United States Army",
+      "path": "assets/logos/groups/usar.png",
+      "tier": "group",
+      "robloxId": 3108077
+    },
+    {
+      "id": "group:FC",
+      "label": "FC \u2014 Futures Command",
+      "path": "assets/logos/groups/fc.png",
+      "tier": "group",
+      "robloxId": 9606178
+    },
+    {
+      "id": "group:VA",
+      "label": "VA \u2014 Veterans Association",
+      "path": "assets/logos/groups/va.png",
+      "tier": "group",
+      "robloxId": 33323430
+    },
+    {
+      "id": "group:AAC",
+      "label": "AAC \u2014 Army Administrative Command",
+      "path": "assets/logos/groups/aac.png",
+      "tier": "group",
+      "robloxId": 34055702
+    },
+    {
+      "id": "group:AFA",
+      "label": "AFA \u2014 Army Foreign Affairs",
+      "path": "assets/logos/groups/afa.png",
+      "tier": "group",
+      "robloxId": 14504795
+    },
+    {
+      "id": "group:QMC",
+      "label": "QMC \u2014 Quartermaster Corps",
+      "path": "assets/logos/groups/qmc.png",
+      "tier": "group",
+      "robloxId": 5040124
+    },
+    {
+      "id": "group:ODCS",
+      "label": "ODCS \u2014 Office of the Deputy Chief of Staff",
+      "path": "assets/logos/groups/odcs.png",
+      "tier": "group",
+      "robloxId": 34098084
+    },
+    {
+      "id": "group:ASCC",
+      "label": "ASCC \u2014 Army Service Component Commands",
+      "path": "assets/logos/groups/ascc.png",
+      "tier": "group",
+      "robloxId": 5896835
+    },
+    {
+      "id": "group:STAFF",
+      "label": "STAFF \u2014 USAR Community Staff",
+      "path": "assets/logos/groups/staff.png",
+      "tier": "group",
+      "robloxId": 15727328
+    },
+    {
+      "id": "group:FORSCOM",
+      "label": "FORSCOM \u2014 Forces Command",
+      "path": "assets/logos/groups/forscom.png",
+      "tier": "group",
+      "robloxId": 3198375
+    },
+    {
+      "id": "group:1CAV",
+      "label": "1CAV \u2014 1st Cavalry Division",
+      "path": "assets/logos/groups/1cav.png",
+      "tier": "group",
+      "robloxId": 6245987
+    },
+    {
+      "id": "group:101st",
+      "label": "101st \u2014 101st Airborne Division",
+      "path": "assets/logos/groups/101st.png",
+      "tier": "group",
+      "robloxId": 3735974
+    },
+    {
+      "id": "group:1ID",
+      "label": "1ID \u2014 1st Infantry Division",
+      "path": "assets/logos/groups/1id.png",
+      "tier": "group",
+      "robloxId": 3725812
+    },
+    {
+      "id": "group:82nd",
+      "label": "82nd \u2014 82nd Airborne Division",
+      "path": "assets/logos/groups/82nd.png",
+      "tier": "group",
+      "robloxId": 3198387
+    },
+    {
+      "id": "group:MPC",
+      "label": "MPC \u2014 Military Police Corps",
+      "path": "assets/logos/groups/mpc.png",
+      "tier": "group",
+      "robloxId": 4929233
+    },
+    {
+      "id": "group:ACC",
+      "label": "ACC \u2014 Army Corrections Command",
+      "path": "assets/logos/groups/acc.png",
+      "tier": "group",
+      "robloxId": 786467475
+    },
+    {
+      "id": "group:JAGC",
+      "label": "JAGC \u2014 Judge Advocate General's Corps",
+      "path": "assets/logos/groups/jagc.png",
+      "tier": "group",
+      "robloxId": 15531002
+    },
+    {
+      "id": "group:CID",
+      "label": "CID \u2014 Criminal Investigation Division",
+      "path": "assets/logos/groups/cid.png",
+      "tier": "group",
+      "robloxId": 33438975
+    },
+    {
+      "id": "group:503rd",
+      "label": "503rd \u2014 503rd Battalion",
+      "path": "assets/logos/groups/503rd.png",
+      "tier": "group",
+      "robloxId": 8124498
+    },
+    {
+      "id": "group:14th",
+      "label": "14th \u2014 14th Brigade",
+      "path": "assets/logos/groups/14th.png",
+      "tier": "group",
+      "robloxId": 7076400
+    },
+    {
+      "id": "group:TRADOC",
+      "label": "TRADOC \u2014 Training and Doctrine Command",
+      "path": "assets/logos/groups/tradoc.png",
+      "tier": "group",
+      "robloxId": 4929259
+    },
+    {
+      "id": "group:CAC",
+      "label": "CAC \u2014 Combined Arms Centre",
+      "path": "assets/logos/groups/cac.png",
+      "tier": "group",
+      "robloxId": 34098045
+    },
+    {
+      "id": "group:AU",
+      "label": "AU \u2014 Army University",
+      "path": "assets/logos/groups/au.png",
+      "tier": "group",
+      "robloxId": 4929487
+    },
+    {
+      "id": "group:RRC",
+      "label": "RRC \u2014 Recruiting and Retention College",
+      "path": "assets/logos/groups/rrc.png",
+      "tier": "group",
+      "robloxId": 8050360
+    },
+    {
+      "id": "group:CIMT",
+      "label": "CIMT \u2014 Center for Initial Military Training",
+      "path": "assets/logos/groups/cimt.png",
+      "tier": "group",
+      "robloxId": 448239957
+    },
+    {
+      "id": "group:165th",
+      "label": "165th \u2014 165th Infantry Brigade",
+      "path": "assets/logos/groups/165th.png",
+      "tier": "group",
+      "robloxId": 32440420
+    },
+    {
+      "id": "group:DSA",
+      "label": "DSA \u2014 Drill Sergeant Academy",
+      "path": "assets/logos/groups/dsa.png",
+      "tier": "group",
+      "robloxId": 9608022
+    },
+    {
+      "id": "group:SMA",
+      "label": "SMA \u2014 Sergeants Major Academy",
+      "path": "assets/logos/groups/sma.png",
+      "tier": "group",
+      "robloxId": 34124457
+    },
+    {
+      "id": "group:ASOC",
+      "label": "ASOC \u2014 Army Special Operations Command",
+      "path": "assets/logos/groups/asoc.png",
+      "tier": "group",
+      "robloxId": 3114833
+    },
+    {
+      "id": "group:ASF",
+      "label": "ASF \u2014 Army Special Forces",
+      "path": "assets/logos/groups/asf.png",
+      "tier": "group",
+      "robloxId": 3235972
+    },
+    {
+      "id": "group:75th",
+      "label": "75th \u2014 75th Ranger Regiment",
+      "path": "assets/logos/groups/75th.png",
+      "tier": "group",
+      "robloxId": 5021791
+    },
+    {
+      "id": "group:JFKSWCS",
+      "label": "JFKSWCS \u2014 John F. Kennedy Special Warfare Center and School",
+      "path": "assets/logos/groups/jfkswcs.png",
+      "tier": "group",
+      "robloxId": 4985471
+    },
+    {
+      "id": "group:TFD",
+      "label": "TFD \u2014 Task Force Dagger",
+      "path": "assets/logos/groups/tfd.png",
+      "tier": "group",
+      "robloxId": 35114712
+    },
+    {
+      "id": "group:160th",
+      "label": "160th \u2014 160th Special Operations Aviation Regiment",
+      "path": "assets/logos/groups/160th.png",
+      "tier": "group",
+      "robloxId": 4978956
+    },
+    {
+      "id": "group:ORB",
+      "label": "ORB \u2014 Orbital Readiness Battalion",
+      "path": "assets/logos/groups/orb.png",
+      "tier": "group",
+      "robloxId": 7076547
+    },
+    {
+      "id": "group:42nd OO",
+      "label": "42nd OO \u2014 42nd Orbital Operations Division",
+      "path": "assets/logos/groups/42nd-oo.png",
+      "tier": "group",
+      "robloxId": 34097972
+    },
+    {
+      "id": "div:1CAV",
+      "label": "1st Cavalry Division",
+      "path": "assets/logos/divisions/1cav.png",
+      "tier": "division"
+    },
+    {
+      "id": "bde:1CAV:Greywolf Brigade",
+      "label": "1CAV / Greywolf Brigade",
+      "path": "assets/logos/brigades/1cav-greywolf-brigade.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:1CAV:Warhorse Company",
+      "label": "1CAV / Warhorse Company",
+      "path": "assets/logos/companies/1cav-warhorse-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:1CAV:Nighthawks Company",
+      "label": "1CAV / Nighthawks Company",
+      "path": "assets/logos/companies/1cav-nighthawks-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:1CAV:Wrangler Company",
+      "label": "1CAV / Wrangler Company",
+      "path": "assets/logos/companies/1cav-wrangler-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "bde:1CAV:Ironhorse Brigade",
+      "label": "1CAV / Ironhorse Brigade",
+      "path": "assets/logos/brigades/1cav-ironhorse-brigade.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:1CAV:Saber Company",
+      "label": "1CAV / Saber Company",
+      "path": "assets/logos/companies/1cav-saber-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:1CAV:Lancer Company",
+      "label": "1CAV / Lancer Company",
+      "path": "assets/logos/companies/1cav-lancer-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "bde:1CAV:Spearhead Brigade",
+      "label": "1CAV / Spearhead Brigade",
+      "path": "assets/logos/brigades/1cav-spearhead-brigade.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:1CAV:Garryowen Company",
+      "label": "1CAV / Garryowen Company",
+      "path": "assets/logos/companies/1cav-garryowen-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:1CAV:Palehorse Company",
+      "label": "1CAV / Palehorse Company",
+      "path": "assets/logos/companies/1cav-palehorse-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "div:101st",
+      "label": "101st Airborne Division",
+      "path": "assets/logos/divisions/101st.png",
+      "tier": "division"
+    },
+    {
+      "id": "bde:101st:Black Hats",
+      "label": "101st / Black Hats",
+      "path": "assets/logos/brigades/101st-black-hats.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:101st:Aurora Company",
+      "label": "101st / Aurora Company",
+      "path": "assets/logos/companies/101st-aurora-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:101st:Titan Company",
+      "label": "101st / Titan Company",
+      "path": "assets/logos/companies/101st-titan-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "bde:101st:Strike Brigade",
+      "label": "101st / Strike Brigade",
+      "path": "assets/logos/brigades/101st-strike-brigade.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:101st:Raptor Company",
+      "label": "101st / Raptor Company",
+      "path": "assets/logos/companies/101st-raptor-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:101st:Assurgam Company",
+      "label": "101st / Assurgam Company",
+      "path": "assets/logos/companies/101st-assurgam-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:101st:Bulldog Company",
+      "label": "101st / Bulldog Company",
+      "path": "assets/logos/companies/101st-bulldog-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "bde:101st:Wings Brigade",
+      "label": "101st / Wings Brigade",
+      "path": "assets/logos/brigades/101st-wings-brigade.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:101st:Air Assault Company",
+      "label": "101st / Air Assault Company",
+      "path": "assets/logos/companies/101st-air-assault-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:101st:Air Logistics Company",
+      "label": "101st / Air Logistics Company",
+      "path": "assets/logos/companies/101st-air-logistics-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:101st:Aviation Qualification Company",
+      "label": "101st / Aviation Qualification Company",
+      "path": "assets/logos/companies/101st-aviation-qualification-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "div:1ID",
+      "label": "1st Infantry Division",
+      "path": "assets/logos/divisions/1id.png",
+      "tier": "division"
+    },
+    {
+      "id": "bde:1ID:RAVEN BRIGADE",
+      "label": "1ID / RAVEN BRIGADE",
+      "path": "assets/logos/brigades/1id-raven-brigade.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:1ID:Phoenix Company",
+      "label": "1ID / Phoenix Company",
+      "path": "assets/logos/companies/1id-phoenix-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:1ID:Dagger Company",
+      "label": "1ID / Dagger Company",
+      "path": "assets/logos/companies/1id-dagger-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "bde:1ID:DEMON BRIGADE",
+      "label": "1ID / DEMON BRIGADE",
+      "path": "assets/logos/brigades/1id-demon-brigade.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:1ID:Phantom Company",
+      "label": "1ID / Phantom Company",
+      "path": "assets/logos/companies/1id-phantom-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:1ID:Reaper Company",
+      "label": "1ID / Reaper Company",
+      "path": "assets/logos/companies/1id-reaper-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "bde:1ID:Army Infantry School",
+      "label": "1ID / Army Infantry School",
+      "path": "assets/logos/brigades/1id-army-infantry-school.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:1ID:Golf Company",
+      "label": "1ID / Golf Company",
+      "path": "assets/logos/companies/1id-golf-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:1ID:Viper Company",
+      "label": "1ID / Viper Company",
+      "path": "assets/logos/companies/1id-viper-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "bde:1ID:VANGUARD BRIGADE",
+      "label": "1ID / VANGUARD BRIGADE",
+      "path": "assets/logos/brigades/1id-vanguard-brigade.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:1ID:Lifeline Company",
+      "label": "1ID / Lifeline Company",
+      "path": "assets/logos/companies/1id-lifeline-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:1ID:Legion Company",
+      "label": "1ID / Legion Company",
+      "path": "assets/logos/companies/1id-legion-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "div:82nd",
+      "label": "82nd Airborne Division",
+      "path": "assets/logos/divisions/82nd.png",
+      "tier": "division"
+    },
+    {
+      "id": "co:82nd:Angel Company",
+      "label": "82nd / Angel Company",
+      "path": "assets/logos/companies/82nd-angel-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:82nd:173rd Mountaineering Company",
+      "label": "82nd / 173rd Mountaineering Company",
+      "path": "assets/logos/companies/82nd-173rd-mountaineering-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "bde:82nd:Falcon Brigade",
+      "label": "82nd / Falcon Brigade",
+      "path": "assets/logos/brigades/82nd-falcon-brigade.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:82nd:Hawk Company",
+      "label": "82nd / Hawk Company",
+      "path": "assets/logos/companies/82nd-hawk-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:82nd:Eagle Company",
+      "label": "82nd / Eagle Company",
+      "path": "assets/logos/companies/82nd-eagle-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "bde:82nd:Black Hats Brigade",
+      "label": "82nd / Black Hats Brigade",
+      "path": "assets/logos/brigades/82nd-black-hats-brigade.png",
+      "tier": "brigade"
+    },
+    {
+      "id": "co:82nd:Orpheus Company",
+      "label": "82nd / Orpheus Company",
+      "path": "assets/logos/companies/82nd-orpheus-company.png",
+      "tier": "company"
+    },
+    {
+      "id": "co:82nd:Eurydice Company",
+      "label": "82nd / Eurydice Company",
+      "path": "assets/logos/companies/82nd-eurydice-company.png",
+      "tier": "company"
+    }
+  ],
+  "commandGroups": [
+    {
+      "id": "FORSCOM",
+      "abbr": "FORSCOM",
+      "name": "Forces Command",
+      "category": "forscom",
+      "logo": "assets/logos/groups/forscom.png",
+      "robloxId": 3198375
+    },
+    {
+      "id": "MPC",
+      "abbr": "MPC",
+      "name": "Military Police Corps",
+      "category": "mpc",
+      "logo": "assets/logos/groups/mpc.png",
+      "robloxId": 4929233
+    },
+    {
+      "id": "TRADOC",
+      "abbr": "TRADOC",
+      "name": "Training and Doctrine Command",
+      "category": "tradoc",
+      "logo": "assets/logos/groups/tradoc.png",
+      "robloxId": 4929259
+    },
+    {
+      "id": "ASOC",
+      "abbr": "ASOC",
+      "name": "Army Special Operations Command",
+      "category": "asoc",
+      "logo": "assets/logos/groups/asoc.png",
+      "robloxId": 3114833
+    },
+    {
+      "id": "AAC",
+      "abbr": "AAC",
+      "name": "Army Administrative Command",
+      "category": "aac",
+      "logo": "assets/logos/groups/aac.png",
+      "robloxId": 34055702
+    },
+    {
+      "id": "USAR",
+      "abbr": "USAR",
+      "name": "United States Army",
+      "category": "usar",
+      "logo": "assets/logos/groups/usar.png",
+      "robloxId": 3108077
+    }
+  ],
+  "divisions": [
+    {
+      "id": "101st",
+      "abbr": "101st",
+      "name": "101st Airborne Division",
+      "command": "FORSCOM",
+      "category": "forscom",
+      "tier": "division",
+      "logo": "assets/logos/groups/101st.png",
+      "robloxId": 3735974
+    },
+    {
+      "id": "1CAV",
+      "abbr": "1CAV",
+      "name": "1st Cavalry Division",
+      "command": "FORSCOM",
+      "category": "forscom",
+      "tier": "division",
+      "logo": "assets/logos/groups/1cav.png",
+      "robloxId": 6245987
+    },
+    {
+      "id": "1ID",
+      "abbr": "1ID",
+      "name": "1st Infantry Division",
+      "command": "FORSCOM",
+      "category": "forscom",
+      "tier": "division",
+      "logo": "assets/logos/groups/1id.png",
+      "robloxId": 3725812
+    },
+    {
+      "id": "82nd",
+      "abbr": "82nd",
+      "name": "82nd Airborne Division",
+      "command": "FORSCOM",
+      "category": "forscom",
+      "tier": "division",
+      "logo": "assets/logos/groups/82nd.png",
+      "robloxId": 3198387
+    },
+    {
+      "id": "14th",
+      "abbr": "14th",
+      "name": "14th Brigade",
+      "command": "MPC",
+      "category": "mpc",
+      "tier": "brigade",
+      "logo": "assets/logos/groups/14th.png",
+      "robloxId": 7076400
+    },
+    {
+      "id": "503rd",
+      "abbr": "503rd",
+      "name": "503rd Battalion",
+      "command": "MPC",
+      "category": "mpc",
+      "tier": "battalion",
+      "logo": "assets/logos/groups/503rd.png",
+      "robloxId": 8124498
+    },
+    {
+      "id": "ACC",
+      "abbr": "ACC",
+      "name": "Army Corrections Command",
+      "command": "MPC",
+      "category": "mpc",
+      "tier": "subcommand",
+      "logo": "assets/logos/groups/acc.png",
+      "robloxId": 786467475
+    },
+    {
+      "id": "CID",
+      "abbr": "CID",
+      "name": "Criminal Investigation Division",
+      "command": "MPC",
+      "category": "mpc",
+      "tier": "division",
+      "logo": "assets/logos/groups/cid.png",
+      "robloxId": 33438975
+    },
+    {
+      "id": "JAGC",
+      "abbr": "JAGC",
+      "name": "Judge Advocate General's Corps",
+      "command": "MPC",
+      "category": "mpc",
+      "tier": "corps",
+      "logo": "assets/logos/groups/jagc.png",
+      "robloxId": 15531002
+    },
+    {
+      "id": "165th",
+      "abbr": "165th",
+      "name": "165th Infantry Brigade",
+      "command": "TRADOC",
+      "category": "tradoc",
+      "tier": "brigade",
+      "logo": "assets/logos/groups/165th.png",
+      "robloxId": 32440420
+    },
+    {
+      "id": "AU",
+      "abbr": "AU",
+      "name": "Army University",
+      "command": "TRADOC",
+      "category": "tradoc",
+      "tier": "school",
+      "logo": "assets/logos/groups/au.png",
+      "robloxId": 4929487
+    },
+    {
+      "id": "CIMT",
+      "abbr": "CIMT",
+      "name": "Center for Initial Military Training",
+      "command": "TRADOC",
+      "category": "tradoc",
+      "tier": "school",
+      "logo": "assets/logos/groups/cimt.png",
+      "robloxId": 448239957
+    },
+    {
+      "id": "CAC",
+      "abbr": "CAC",
+      "name": "Combined Arms Centre",
+      "command": "TRADOC",
+      "category": "tradoc",
+      "tier": "school",
+      "logo": "assets/logos/groups/cac.png",
+      "robloxId": 34098045
+    },
+    {
+      "id": "DSA",
+      "abbr": "DSA",
+      "name": "Drill Sergeant Academy",
+      "command": "TRADOC",
+      "category": "tradoc",
+      "tier": "school",
+      "logo": "assets/logos/groups/dsa.png",
+      "robloxId": 9608022
+    },
+    {
+      "id": "RRC",
+      "abbr": "RRC",
+      "name": "Recruiting and Retention College",
+      "command": "TRADOC",
+      "category": "tradoc",
+      "tier": "school",
+      "logo": "assets/logos/groups/rrc.png",
+      "robloxId": 8050360
+    },
+    {
+      "id": "SMA",
+      "abbr": "SMA",
+      "name": "Sergeants Major Academy",
+      "command": "TRADOC",
+      "category": "tradoc",
+      "tier": "school",
+      "logo": "assets/logos/groups/sma.png",
+      "robloxId": 34124457
+    },
+    {
+      "id": "160th",
+      "abbr": "160th",
+      "name": "160th Special Operations Aviation Regiment",
+      "command": "ASOC",
+      "category": "asoc",
+      "tier": "regiment",
+      "logo": "assets/logos/groups/160th.png",
+      "robloxId": 4978956
+    },
+    {
+      "id": "42nd OO",
+      "abbr": "42nd OO",
+      "name": "42nd Orbital Operations Division",
+      "command": "ASOC",
+      "category": "asoc",
+      "tier": "division",
+      "logo": "assets/logos/groups/42nd-oo.png",
+      "robloxId": 34097972
+    },
+    {
+      "id": "75th",
+      "abbr": "75th",
+      "name": "75th Ranger Regiment",
+      "command": "ASOC",
+      "category": "asoc",
+      "tier": "regiment",
+      "logo": "assets/logos/groups/75th.png",
+      "robloxId": 5021791
+    },
+    {
+      "id": "ASF",
+      "abbr": "ASF",
+      "name": "Army Special Forces",
+      "command": "ASOC",
+      "category": "asoc",
+      "tier": "division",
+      "logo": "assets/logos/groups/asf.png",
+      "robloxId": 3235972
+    },
+    {
+      "id": "JFKSWCS",
+      "abbr": "JFKSWCS",
+      "name": "John F. Kennedy Special Warfare Center and School",
+      "command": "ASOC",
+      "category": "asoc",
+      "tier": "school",
+      "logo": "assets/logos/groups/jfkswcs.png",
+      "robloxId": 4985471
+    },
+    {
+      "id": "ORB",
+      "abbr": "ORB",
+      "name": "Orbital Readiness Battalion",
+      "command": "ASOC",
+      "category": "asoc",
+      "tier": "battalion",
+      "logo": "assets/logos/groups/orb.png",
+      "robloxId": 7076547
+    },
+    {
+      "id": "TFD",
+      "abbr": "TFD",
+      "name": "Task Force Dagger",
+      "command": "ASOC",
+      "category": "asoc",
+      "tier": "division",
+      "logo": "assets/logos/groups/tfd.png",
+      "robloxId": 35114712
+    },
+    {
+      "id": "AFA",
+      "abbr": "AFA",
+      "name": "Army Foreign Affairs",
+      "command": "AAC",
+      "category": "aac",
+      "tier": "division",
+      "logo": "assets/logos/groups/afa.png",
+      "robloxId": 14504795
+    },
+    {
+      "id": "ASCC",
+      "abbr": "ASCC",
+      "name": "Army Service Component Commands",
+      "command": "AAC",
+      "category": "aac",
+      "tier": "subcommand",
+      "logo": "assets/logos/groups/ascc.png",
+      "robloxId": 5896835
+    },
+    {
+      "id": "ODCS",
+      "abbr": "ODCS",
+      "name": "Office of the Deputy Chief of Staff",
+      "command": "AAC",
+      "category": "aac",
+      "tier": "division",
+      "logo": "assets/logos/groups/odcs.png",
+      "robloxId": 34098084
+    },
+    {
+      "id": "QMC",
+      "abbr": "QMC",
+      "name": "Quartermaster Corps",
+      "command": "AAC",
+      "category": "aac",
+      "tier": "corps",
+      "logo": "assets/logos/groups/qmc.png",
+      "robloxId": 5040124
+    },
+    {
+      "id": "STAFF",
+      "abbr": "STAFF",
+      "name": "USAR Community Staff",
+      "command": "AAC",
+      "category": "aac",
+      "tier": "division",
+      "logo": "assets/logos/groups/staff.png",
+      "robloxId": 15727328
+    },
+    {
+      "id": "FC",
+      "abbr": "FC",
+      "name": "Futures Command",
+      "command": "USAR",
+      "category": "usar",
+      "tier": "subcommand",
+      "logo": "assets/logos/groups/fc.png",
+      "robloxId": 9606178
+    },
+    {
+      "id": "VA",
+      "abbr": "VA",
+      "name": "Veterans Association",
+      "command": "USAR",
+      "category": "usar",
+      "tier": "division",
+      "logo": "assets/logos/groups/va.png",
+      "robloxId": 33323430
+    }
+  ]
+}

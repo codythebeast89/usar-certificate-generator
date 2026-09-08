@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>USAR Certificate Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="panel">
+      <header class="panel__header">
+        <p class="eyebrow">Army University</p>
+        <h1>Certificate Generator</h1>
+        <p class="lede">Fill the form to generate a graduation certificate. OCS is live; more courses can be added later.</p>
+      </header>
+
+      <form id="cert-form" class="form" autocomplete="off">
+        <fieldset>
+          <legend>Course</legend>
+          <label>
+            Course
+            <select id="course" name="course"></select>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Graduate</legend>
+          <label>
+            Username of person passing
+            <input id="graduate" name="graduate" type="text" placeholder="thelastone5000" required />
+          </label>
+          <label>
+            Division / Battalion
+            <select id="division" name="division"></select>
+          </label>
+          <label class="optional">
+            Custom unit text (optional)
+            <input id="divisionCustom" name="divisionCustom" type="text" placeholder="Overrides selected unit name on the certificate" />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Logos</legend>
+          <p class="hint">Left seal = Division / Battalion (all commands). Right seal = Command Group (USAR, FORSCOM, MPC, TRADOC, ASOC, AAC). Watermark follows the selected course.</p>
+
+          <label>
+            Left logo (Division / Battalion)
+            <select id="leftUnit"></select>
+          </label>
+          <label class="optional">
+            Or upload left logo
+            <input id="leftCustomFile" type="file" accept="image/*" />
+          </label>
+          <div class="logo-preview" id="leftLogoPreview"></div>
+
+          <label>
+            Right logo (Command Group)
+            <select id="commandGroup"></select>
+          </label>
+          <label class="optional">
+            Or upload right logo
+            <input id="rightCustomFile" type="file" accept="image/*" />
+          </label>
+          <div class="logo-preview" id="rightLogoPreview"></div>
+
+          <label>
+            Watermark (course)
+            <select id="watermarkLogo"></select>
+          </label>
+          <div class="logo-preview" id="watermarkPreview"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Signatures</legend>
+          <label>
+            Division Commanding General username
+            <input id="dcg" name="dcg" type="text" placeholder="BlueTap" required />
+          </label>
+          <label>
+            Course BCO username
+            <input id="bco" name="bco" type="text" placeholder="Eirbeidh" required />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Date &amp; location</legend>
+          <div class="row">
+            <label>
+              Day
+              <input id="day" name="day" type="number" min="1" max="31" value="10" />
+            </label>
+            <label>
+              Month
+              <select id="month" name="month">
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option selected>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+            </label>
+            <label>
+              Year
+              <input id="year" name="year" type="number" value="2026" />
+            </label>
+          </div>
+          <label>
+            Location
+            <input id="location" name="location" type="text" value="Fort Jackson" />
+          </label>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" id="downloadBtn" class="btn primary">Download PNG</button>
+          <button type="reset" class="btn ghost">Reset</button>
+        </div>
+      </form>
+    </aside>
+
+    <main class="preview-pane">
+      <div class="preview-toolbar">
+        <span id="status">Loading catalog…</span>
+        <button type="button" id="fullscreenBtn" class="btn ghost">Expand preview</button>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="certificate" width="2000" height="1414" aria-label="Certificate preview"></canvas>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>
