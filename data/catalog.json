@@ -33,6 +33,23 @@
       "leftSignatoryTitle": "Division Commanding General,",
       "defaultLocation": "Fort Jackson",
       "candidateLabel": "Candidate"
+    },
+    {
+      "id": "esb",
+      "name": "Expert Soldier Badge Course",
+      "shortName": "ESB",
+      "enabled": true,
+      "certificateTitle": "Expert Soldier Badge Course",
+      "certificateSubtitle": "Certificate of Graduation",
+      "bodyTemplate": "This is to certify that Candidate {graduate} of the {division} has successfully completed the prescribed course of instruction and satisfied all requirements of {course}, demonstrating the professionalism, trustworthiness, and courage expected of a Soldier who has earned the Expert Soldier Badge.",
+      "watermarkLogo": "assets/logos/groups/rrc.png",
+      "defaultRightLogo": "assets/logos/groups/tradoc.png",
+      "defaultRightLabel": "Training and Doctrine Command",
+      "rightSignatoryTitle": "Brigade Commanding Officer,",
+      "rightSignatoryOrg": "Recruiting and Retention College",
+      "leftSignatoryTitle": "Division Commanding General,",
+      "defaultLocation": "Fort Jackson",
+      "candidateLabel": "Candidate"
     }
   ],
   "units": [

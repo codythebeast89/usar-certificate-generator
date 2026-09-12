@@ -243,7 +243,7 @@ function populateCommandSelect() {
 function populateWatermarkSelect(course) {
   const opts = [];
   if (course.watermarkLogo) {
-    opts.push({ value: course.watermarkLogo, label: `${course.shortName} default (Army University)` });
+    opts.push({ value: course.watermarkLogo, label: `${course.shortName} default` });
   }
   for (const g of catalog.trackedGroups || []) {
     if (g.logo) opts.push({ value: g.logo, label: `${g.abbr} — ${g.name}` });

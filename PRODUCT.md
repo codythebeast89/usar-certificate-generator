@@ -12,7 +12,7 @@ Training cadre across USAR units — training NCOs/officers who generate graduat
 
 ## Product Purpose
 
-A static, no-backend web app that lets USAR training cadre generate a graduation certificate for a course candidate (OCS and SMA) and download it as a PNG, ready to print or hand to the graduate.
+A static, no-backend web app that lets USAR training cadre generate a graduation certificate for a course candidate (OCS, SMA, and ESB) and download it as a PNG, ready to print or hand to the graduate.
 
 ## Positioning
 
@@ -24,7 +24,7 @@ Runs entirely client-side as a static site (GitHub Pages, live at https://codyth
 
 ## Capabilities and Constraints
 
-- Two courses enabled: OCS (Officer Candidate School) and SMA (Sergeants Major Academy).
+- Three courses enabled: OCS (Officer Candidate School), SMA (Sergeants Major Academy), and ESB (Expert Soldier Badge Course, hosted by RRC). ESB has no dedicated badge artwork yet, so it uses RRC's own seal as a placeholder watermark rather than a fabricated badge image; its right-seal command-group fallback is TRADOC, RRC's actual parent command.
 - `data/catalog.json` is the single source of truth for the division → brigade → company hierarchy and course templates.
 - No backend, no persistence — one-shot PNG download per session; nothing is saved server-side.
 - Insignia usage/trademark rights for official or unofficial DoD/Army unit insignia are an open, unresolved concern — flag before wider distribution rather than assuming clearance.
