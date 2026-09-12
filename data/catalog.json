@@ -21,7 +21,7 @@
       "id": "sma",
       "name": "Sergeants Major Academy",
       "shortName": "SMA",
-      "enabled": false,
+      "enabled": true,
       "certificateTitle": "Sergeants Major Academy",
       "certificateSubtitle": "Certificate of Graduation",
       "bodyTemplate": "This is to certify that Candidate {graduate} of the {division} has successfully completed the prescribed course of instruction and satisfied all requirements of {course}, demonstrating the professionalism, trustworthiness, and courage expected of a non-commissioned officer.",
