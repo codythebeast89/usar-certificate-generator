@@ -375,6 +375,30 @@ function drawCircularLogo(context, img, cx, cy, size) {
   context.stroke();
 }
 
+/** Interpolate a course's bodyTemplate ({graduate}/{division}/{course} placeholders)
+ *  into the bold/non-bold segments drawBoldSegments expects. */
+function buildBodyParts(course, graduate, division) {
+  const template =
+    course.bodyTemplate ||
+    "This is to certify that Candidate {graduate} of the {division} has successfully completed the prescribed course of instruction and satisfied all requirements of {course}, demonstrating the professionalism, trustworthiness, and courage expected of a commissioned officer.";
+  const values = { graduate, division, course: course.certificateTitle || course.name };
+  const parts = [];
+  const placeholder = /\{(graduate|division|course)\}/g;
+  let lastIndex = 0;
+  let match;
+  while ((match = placeholder.exec(template))) {
+    if (match.index > lastIndex) {
+      parts.push({ text: template.slice(lastIndex, match.index), bold: false });
+    }
+    parts.push({ text: values[match[1]], bold: true });
+    lastIndex = placeholder.lastIndex;
+  }
+  if (lastIndex < template.length) {
+    parts.push({ text: template.slice(lastIndex), bold: false });
+  }
+  return parts;
+}
+
 async function renderCertificate() {
   if (!catalog) return;
   const token = ++renderToken;
@@ -469,15 +493,7 @@ async function renderCertificate() {
   ctx.strokeStyle = "#222";
   ctx.stroke();
 
-  const bodyParts = [
-    { text: "This is to certify that Candidate ", bold: false },
-    { text: graduate, bold: true },
-    { text: " of the ", bold: false },
-    { text: division, bold: true },
-    { text: " has successfully completed the prescribed course of instruction and satisfied all requirements of ", bold: false },
-    { text: course.certificateTitle || course.name, bold: true },
-    { text: ", demonstrating the professionalism, trustworthiness, and courage expected of a commissioned officer.", bold: false },
-  ];
+  const bodyParts = buildBodyParts(course, graduate, division);
   drawBoldSegments(ctx, bodyParts, W / 2, 455, W - 320, 40);
 
   const sealY = 720;
