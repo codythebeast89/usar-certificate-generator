@@ -19,6 +19,9 @@ let parchment = null;
 let renderToken = 0;
 let renderInFlight = false;
 let renderPending = false;
+let leftTitleDirty = false;
+let rightTitleDirty = false;
+let locationDirty = false;
 
 function $(id) {
   return document.getElementById(id);
@@ -446,11 +449,22 @@ async function renderCertificate() {
   ctx.font = 'italic 34px "Libre Baskerville", serif';
   ctx.fillText(course.certificateSubtitle || "Certificate of Graduation", W / 2, 205);
 
-  ctx.font = '400 72px "Great Vibes", cursive';
+  // Shrink the script name to fit long real usernames rather than overrunning the border.
+  const nameMaxWidth = 900;
+  const nameBaseSize = 72;
+  const nameMinSize = 32;
+  ctx.font = `400 ${nameBaseSize}px "Great Vibes", cursive`;
+  let nameWidth = ctx.measureText(graduate).width;
+  if (nameWidth > nameMaxWidth) {
+    const nameSize = Math.max(nameMinSize, nameBaseSize * (nameMaxWidth / nameWidth));
+    ctx.font = `400 ${nameSize}px "Great Vibes", cursive`;
+    nameWidth = ctx.measureText(graduate).width;
+  }
   ctx.fillText(graduate, W / 2, 295);
+  const nameUnderlineHalfWidth = Math.max(240, nameWidth / 2 + 20);
   ctx.beginPath();
-  ctx.moveTo(W / 2 - 240, 335);
-  ctx.lineTo(W / 2 + 240, 335);
+  ctx.moveTo(W / 2 - nameUnderlineHalfWidth, 335);
+  ctx.lineTo(W / 2 + nameUnderlineHalfWidth, 335);
   ctx.lineWidth = 1.5;
   ctx.strokeStyle = "#222";
   ctx.stroke();
@@ -512,7 +526,7 @@ function queueRender() {
         await renderCertificate();
       } catch (err) {
         console.error(err);
-        statusEl.textContent = "Render error — check console";
+        statusEl.textContent = "Couldn't render the certificate — try Reset, or reload the page.";
       }
     }
     renderInFlight = false;
@@ -531,12 +545,15 @@ function readFileAsUrl(file) {
 function syncSignatoryTitlesFromCourse(course) {
   if (!course) return;
   syncLeftSignatoryTitle(course);
-  $("rightSignatoryTitle").value = course.rightSignatoryTitle || "Brigade Commanding Officer,";
+  if (!rightTitleDirty) {
+    $("rightSignatoryTitle").value = course.rightSignatoryTitle || "Brigade Commanding Officer,";
+  }
 }
 
-/** Left title follows QMC selection; other units use the course default. */
+/** Left title follows QMC selection; other units use the course default.
+ *  Skipped once the user has manually edited the field (see leftTitleDirty). */
 function syncLeftSignatoryTitle(course) {
-  if (!course) return;
+  if (!course || leftTitleDirty) return;
   const leftUnitId = $("leftUnit").value || $("division").value;
   const isQmc = leftUnitId === "QMC" || selectedDivision()?.abbr === "QMC";
   $("leftSignatoryTitle").value = isQmc
@@ -549,10 +566,22 @@ function wireEvents() {
   form.addEventListener("input", queueRender);
   form.addEventListener("change", queueRender);
 
+  $("leftSignatoryTitle").addEventListener("input", () => {
+    leftTitleDirty = true;
+  });
+  $("rightSignatoryTitle").addEventListener("input", () => {
+    rightTitleDirty = true;
+  });
+  $("location").addEventListener("input", () => {
+    locationDirty = true;
+  });
+
   $("course").addEventListener("change", () => {
     const course = catalog.courses.find((c) => c.id === $("course").value);
     if (!course || !course.enabled) return;
-    $("location").value = course.defaultLocation || $("location").value;
+    if (!locationDirty && course.defaultLocation) {
+      $("location").value = course.defaultLocation;
+    }
     syncSignatoryTitlesFromCourse(course);
     populateWatermarkSelect(course);
     queueRender();
@@ -607,6 +636,9 @@ function wireEvents() {
     setTimeout(() => {
       customLeftUrl = null;
       customRightUrl = null;
+      leftTitleDirty = false;
+      rightTitleDirty = false;
+      locationDirty = false;
       const course = catalog.courses.find((c) => c.enabled) || catalog.courses[0];
       $("course").value = course.id;
       $("location").value = course.defaultLocation || "Fort Jackson";
@@ -620,15 +652,25 @@ function wireEvents() {
   });
 
   $("downloadBtn").addEventListener("click", async () => {
-    await renderCertificate();
-    const course = catalog.courses.find((c) => c.id === $("course").value);
-    const coursePart = fileSlug(course?.shortName || course?.id || "cert", "cert");
-    const userPart = fileSlug($("graduate").value, "graduate");
-    const stamp = utcStamp();
-    const blob = await canvasToPngBlob(canvas);
-    const bytes = new Uint8Array(await blob.arrayBuffer());
-    const checksum = crc32Hex(bytes);
-    downloadBlob(blob, `${coursePart}-${userPart}-${stamp}-${checksum}.png`);
+    if (!form.reportValidity()) return;
+    const btn = $("downloadBtn");
+    const originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "Generating…";
+    try {
+      await renderCertificate();
+      const course = catalog.courses.find((c) => c.id === $("course").value);
+      const coursePart = fileSlug(course?.shortName || course?.id || "cert", "cert");
+      const userPart = fileSlug($("graduate").value, "graduate");
+      const stamp = utcStamp();
+      const blob = await canvasToPngBlob(canvas);
+      const bytes = new Uint8Array(await blob.arrayBuffer());
+      const checksum = crc32Hex(bytes);
+      downloadBlob(blob, `${coursePart}-${userPart}-${stamp}-${checksum}.png`);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
   });
 
   $("fullscreenBtn").addEventListener("click", () => {
@@ -644,7 +686,12 @@ async function init() {
     const res = await fetch("data/catalog.json");
     catalog = await res.json();
   } catch (err) {
-    statusEl.textContent = "Failed to load data/catalog.json";
+    statusEl.textContent = "Failed to load data/catalog.json — check your connection and reload the page.";
+    statusEl.classList.add("status--error");
+    for (const fieldset of $("cert-form").querySelectorAll("fieldset")) {
+      fieldset.disabled = true;
+    }
+    $("downloadBtn").disabled = true;
     console.error(err);
     return;
   }

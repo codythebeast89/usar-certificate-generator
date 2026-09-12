@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12T01:00:00Z",
+  "title": "Design System: USAR Certificate Generator",
+  "extensions": {
+    "colorMeta": {
+      "brass-insignia": { "role": "primary", "displayName": "Brass Insignia", "canonical": "#c4a35a", "tonalRamp": ["#382d14", "#655124", "#937534", "#bd9847", "#cdb174", "#ddcba1", "#eee4ce", "#f8f5ec"] },
+      "parchment": { "role": "secondary", "displayName": "Parchment", "canonical": "#f5ecd6", "tonalRamp": ["#3e300f", "#6f561b", "#a07d27", "#cea236", "#dab967", "#e6d098", "#f2e6ca", "#faf5ea"] },
+      "certificate-ink": { "role": "secondary", "displayName": "Certificate Ink", "canonical": "#111111", "tonalRamp": ["#262626", "#454545", "#636363", "#828282", "#a1a1a1", "#bfbfbf", "#dedede", "#f2f2f2"] },
+      "seal-backing": { "role": "secondary", "displayName": "Seal Backing", "canonical": "#f3ead2", "tonalRamp": ["#3c3010", "#6d571d", "#9d7e2a", "#caa33a", "#d7b96a", "#e4d09a", "#f1e7cb", "#faf6eb"] },
+      "danger": { "role": "status", "displayName": "Danger", "canonical": "#b5533a", "tonalRamp": ["#3a1b13", "#683021", "#974530", "#c25c42", "#d18470", "#e0ac9e", "#efd4cd", "#f9eeec"] },
+      "deep-olive": { "role": "neutral", "displayName": "Deep Olive", "canonical": "#1a1d18", "tonalRamp": ["#262a23", "#444b3e", "#626d5a", "#808e76", "#9faa98", "#bec5b9", "#dde1db", "#f2f3f1"] },
+      "panel-moss": { "role": "neutral", "displayName": "Panel Moss", "canonical": "#232820", "tonalRamp": ["#252a22", "#434d3d", "#616e58", "#7f9074", "#9eab96", "#bdc6b8", "#dde2da", "#f2f4f1"] },
+      "field-moss": { "role": "neutral", "displayName": "Field Moss", "canonical": "#2c3228", "tonalRamp": ["#252a22", "#434d3d", "#616e58", "#7f9074", "#9fab96", "#bec6b8", "#dde2da", "#f2f4f1"] },
+      "warm-ink": { "role": "neutral", "displayName": "Warm Ink", "canonical": "#f3efe4", "tonalRamp": ["#352d18", "#5f512a", "#8a753d", "#b29852", "#c5b27c", "#d8cba7", "#ebe4d1", "#f7f5ed"] },
+      "muted-tan": { "role": "neutral", "displayName": "Muted Tan", "canonical": "#b7b3a6", "tonalRamp": ["#2a2822", "#4c493e", "#6e6959", "#8f8975", "#aba697", "#c6c3b9", "#e1e0da", "#f4f3f1"] },
+      "line-olive": { "role": "neutral", "displayName": "Line Olive", "canonical": "#3a4034", "tonalRamp": ["#262a22", "#454c3e", "#636e59", "#828f75", "#a1aa97", "#bfc6b9", "#dee1da", "#f2f4f1"] },
+      "accent-ink": { "role": "neutral", "displayName": "Accent Ink", "canonical": "#1a160c", "tonalRamp": ["#342c18", "#5e502b", "#88733f", "#b09654", "#c3b07e", "#d7c9a8", "#eae3d2", "#f7f4ee"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Serif", "purpose": "Tool masthead heading, and the certificate's own title/subtitle/body/date/signatory-title text (Libre Baskerville throughout)." },
+      "script": { "displayName": "Signature Script", "purpose": "Great Vibes, reserved exclusively for the graduate's name and the two signature lines. Never used in the tool UI." },
+      "body": { "displayName": "Form Body", "purpose": "All tool-shell text: field values, hints, lede copy." },
+      "label": { "displayName": "Legend Label", "purpose": "Uppercase fieldset legends in the tool shell, the only label-level use of Brass Insignia." }
+    },
+    "shadows": [
+      { "name": "certificate-shadow", "value": "0 18px 50px rgba(0,0,0,0.45)", "purpose": "The single drop shadow in the whole system, marking the certificate canvas as a physical object on the desk (the One Object Rule)." }
+    ],
+    "motion": [
+      { "name": "hover-brighten", "value": "filter: brightness(1.08)", "purpose": "The only hover treatment on buttons — no color, shape, or shadow change." }
+    ],
+    "breakpoints": [
+      { "name": "stacked", "value": "960px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single primary action per screen (\"Download PNG\").",
+      "html": "<button class=\"ds-btn-primary\">Download PNG</button>",
+      "css": ".ds-btn-primary { appearance: none; border: 1px solid color-mix(in srgb, #c4a35a 70%, black); background: #c4a35a; color: #1a160c; border-radius: 999px; padding: 0.6rem 1.05rem; font-weight: 600; font-family: \"Source Sans 3\", system-ui, sans-serif; font-size: 0.95rem; cursor: pointer; transition: filter 0.15s ease; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { filter: brightness(1.08); } .ds-btn-primary:focus-visible { outline: 2px solid color-mix(in srgb, #c4a35a 65%, white); outline-offset: 1px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary actions (\"Reset\", \"Expand preview\").",
+      "html": "<button class=\"ds-btn-ghost\">Reset</button>",
+      "css": ".ds-btn-ghost { appearance: none; border: 1px solid #3a4034; background: transparent; color: #f3efe4; border-radius: 999px; padding: 0.6rem 1.05rem; font-weight: 600; font-family: \"Source Sans 3\", system-ui, sans-serif; font-size: 0.95rem; cursor: pointer; transition: filter 0.15s ease; } .ds-btn-ghost:hover, .ds-btn-ghost:focus-visible { filter: brightness(1.08); } .ds-btn-ghost:focus-visible { outline: 2px solid color-mix(in srgb, #c4a35a 65%, white); outline-offset: 1px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "A labeled text input, recessed one step lighter than the panel.",
+      "html": "<label class=\"ds-field-label\">Username of person passing<input class=\"ds-field-input\" type=\"text\" placeholder=\"thelastone5000\" /></label>",
+      "css": ".ds-field-label { display: flex; flex-direction: column; gap: 0.35rem; font-family: \"Source Sans 3\", system-ui, sans-serif; font-size: 0.82rem; color: #b7b3a6; } .ds-field-input { width: 100%; border: 1px solid #3a4034; background: #2c3228; color: #f3efe4; border-radius: 8px; padding: 0.55rem 0.65rem; font: inherit; font-size: 0.95rem; } .ds-field-input:focus-visible { outline: 2px solid color-mix(in srgb, #c4a35a 65%, white); outline-offset: 1px; }"
+    },
+    {
+      "name": "Select Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Dropdown selection, styled identically to the text field.",
+      "html": "<label class=\"ds-field-label\">Division / Battalion<select class=\"ds-field-input\"><option>1st Cavalry Division</option></select></label>",
+      "css": ".ds-field-label { display: flex; flex-direction: column; gap: 0.35rem; font-family: \"Source Sans 3\", system-ui, sans-serif; font-size: 0.82rem; color: #b7b3a6; } .ds-field-input { width: 100%; border: 1px solid #3a4034; background: #2c3228; color: #f3efe4; border-radius: 8px; padding: 0.55rem 0.65rem; font: inherit; font-size: 0.95rem; } .ds-field-input:focus-visible { outline: 2px solid color-mix(in srgb, #c4a35a 65%, white); outline-offset: 1px; }"
+    },
+    {
+      "name": "Fieldset Card",
+      "kind": "card",
+      "refersTo": null,
+      "description": "The form's only structural grouping device: a bordered, legend-labeled container. Disabled state (used when the catalog fails to load) dims to 0.55 opacity.",
+      "html": "<fieldset class=\"ds-fieldset\"><legend class=\"ds-legend\">Course</legend><p class=\"ds-fieldset-body\">Field contents go here.</p></fieldset>",
+      "css": ".ds-fieldset { border: 1px solid #3a4034; border-radius: 10px; margin: 0; padding: 0.85rem 0.9rem 1rem; } .ds-fieldset:disabled { opacity: 0.55; } .ds-legend { padding: 0 0.35rem; font-family: \"Source Sans 3\", system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: #c4a35a; } .ds-fieldset-body { margin: 0; font-family: \"Source Sans 3\", system-ui, sans-serif; font-size: 0.95rem; color: #f3efe4; }"
+    },
+    {
+      "name": "Logo Preview Chip",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Previews the exact seal that will render on the certificate before download; appears for left unit, right command, and watermark course.",
+      "html": "<div class=\"ds-logo-preview\"><img class=\"ds-logo-preview-img\" src=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Ccircle cx='22' cy='22' r='20' fill='%23f5ecd6'/%3E%3C/svg%3E\" alt=\"\" /><span>1st Cavalry Division</span></div>",
+      "css": ".ds-logo-preview { display: flex; align-items: center; gap: 0.65rem; min-height: 52px; padding: 0.4rem 0.5rem; border-radius: 8px; background: #171a14; border: 1px dashed #3a4034; } .ds-logo-preview-img { width: 44px; height: 44px; object-fit: contain; background: #f5ecd6; border-radius: 50%; padding: 3px; } .ds-logo-preview span { font-family: \"Source Sans 3\", system-ui, sans-serif; font-size: 0.8rem; color: #b7b3a6; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Adjutant's Desk",
+    "overview": "A disciplined, dimly lit administrative workspace where the real object of care is the document it produces, not the chrome around it. The tool shell is warm and ceremonial in feeling — deep olive surfaces, a brass-insignia accent, a serif masthead — but disciplined and unadorned in construction: pill buttons, plain hairline borders, no gradients or heavy effects. That restraint is deliberate; the workspace never competes with the parchment certificate it exists to produce.\n\nThe certificate itself is a second, distinct register: warm cream parchment, near-black ink, a formal serif for structure and a cursive hand for names and signatures — the fixed visual language of an official Army graduation certificate. The dark tool and the light document share one warm, aged palette family (olive/brass on one side, parchment/ink on the other), so the pairing reads as one system rather than two unrelated surfaces.",
+    "keyCharacteristics": [
+      "Dark, quiet tool chrome (deep olive) housing a warm brass accent used sparingly",
+      "A single physical object in the whole system: the certificate canvas, marked by the only drop shadow",
+      "Two typefaces do all the expressive work — a serif for formal structure, a script for the human hand (names, signatures)",
+      "Certificate visual rules (parchment, ink, seal placement) are fixed and separate from the tool's own chrome"
+    ],
+    "rules": [
+      { "name": "The Insignia Rule", "body": "Brass Insignia appears only on legends, focus states, and the single primary action per screen. It never fills a large surface — its rarity is what makes it read as rank, not decoration.", "section": "colors" },
+      { "name": "The One Hand Rule", "body": "Great Vibes renders human names and nothing else — not headings, not labels, not body copy. If it appears, a person's name is what's being written.", "section": "typography" },
+      { "name": "The One Object Rule", "body": "Exactly one element in the entire system casts a shadow: the certificate. Everything else — buttons, fields, fieldsets, the logo-preview chip — stays flat and line-bordered. A second shadow anywhere else breaks the rule.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Great Vibes exclusive to human names (graduate name, two signatures) — the One Hand Rule.",
+      "Do keep Brass Insignia rare: legends, focus rings, and the single primary button only — the Insignia Rule.",
+      "Do keep every tool-shell surface flat (borders only); reserve the drop shadow for the certificate canvas — the One Object Rule.",
+      "Do back every circular seal with the cream Seal Backing disc so transparent or tall/non-square insignia never look cropped.",
+      "Do preview every logo choice (left/right/watermark) before it reaches the certificate — no blind selection."
+    ],
+    "donts": [
+      "Don't add a second shadow anywhere in the tool shell — it would compete with the certificate as \"the object.\"",
+      "Don't use the script font for anything but a name — not headings, not labels, not body text.",
+      "Don't round the certificate's own corners or soften its border — its sharp-edged, double-ruled rectangle is a fixed part of the formal-document register, distinct from the tool shell's soft radii.",
+      "Don't fill large surfaces with Brass Insignia — its value is scarcity, not saturation."
+    ]
+  }
+}

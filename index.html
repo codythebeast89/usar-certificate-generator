@@ -43,8 +43,8 @@
         </fieldset>
 
         <fieldset>
-          <legend>Logos</legend>
-          <p class="hint">Left seal = Division / Battalion (all commands). Right seal = Command Group (USAR, FORSCOM, MPC, TRADOC, ASOC, AAC). Watermark follows the selected course.</p>
+          <legend>Seals</legend>
+          <p class="hint">Left seal = Division / Battalion (all commands). Right seal = Command Group (USAR, FORSCOM, MPC, TRADOC, ASOC, AAC).</p>
 
           <label>
             Left logo (Division / Battalion)
@@ -65,6 +65,11 @@
             <input id="rightCustomFile" type="file" accept="image/*" />
           </label>
           <div class="logo-preview" id="rightLogoPreview"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Watermark</legend>
+          <p class="hint">Watermark follows the selected course.</p>
 
           <label>
             Watermark (course)
@@ -137,7 +142,7 @@
 
     <main class="preview-pane">
       <div class="preview-toolbar">
-        <span id="status">Loading catalog…</span>
+        <span id="status" role="status" aria-live="polite">Loading catalog…</span>
         <button type="button" id="fullscreenBtn" class="btn ghost">Expand preview</button>
       </div>
       <div class="canvas-wrap">

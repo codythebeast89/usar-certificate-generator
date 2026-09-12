@@ -7,6 +7,7 @@
   --accent: #c4a35a;
   --accent-ink: #1a160c;
   --field: #2c3228;
+  --danger: #b5533a;
   --radius: 10px;
   --serif: "Libre Baskerville", Georgia, serif;
   --sans: "Source Sans 3", system-ui, sans-serif;
@@ -115,6 +116,10 @@ body { min-height: 100vh; }
 
 .hidden { display: none !important; }
 
+.status--error { color: var(--danger); }
+
+.form fieldset:disabled { opacity: 0.55; }
+
 .logo-preview {
   display: flex;
   align-items: center;
@@ -168,6 +173,11 @@ body { min-height: 100vh; }
 .btn.ghost:hover,
 .btn.primary:hover { filter: brightness(1.08); }
 
+.btn:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 65%, white);
+  outline-offset: 1px;
+}
+
 .preview-pane {
   display: flex;
   flex-direction: column;
@@ -211,4 +221,10 @@ body.preview-expanded #certificate { width: min(100%, 1600px); }
   .app { grid-template-columns: 1fr; }
   .panel { max-height: none; border-right: 0; border-bottom: 1px solid var(--line); }
   .row { grid-template-columns: 1fr; }
+}
+
+@media (pointer: coarse) {
+  .btn { padding: 0.75rem 1.05rem; }
+  .form input,
+  .form select { padding: 0.8rem 0.65rem; }
 }

@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-12T13:29:38.530Z",
+        "reason": "Pre-existing (attribution unknown), evaluated during /impeccable audit: the two radial-gradient stops (#2f3528, #3a3220) are a single intentional atmospheric wash matching the committed 'Adjutant's Desk' brief, documented as an accepted one-off in DESIGN.md Colors > Named Rules. Not a defect."
+      }
+    ]
+  }
+}
